@@ -1,0 +1,20 @@
+{
+  "Projects": [
+    {
+      "name": "Kindergartten",
+      "Location": "Cekmekoy"
+    },
+    {
+      "name": "Residential",
+      "Location": "Cengelkoy"
+    },
+    {
+      "name": "Museum",
+      "Location": "Dudullu"
+    },
+    {
+      "name": "Urban dev",
+      "Location": "Kabatas"
+    }
+  ]
+}
