@@ -23,6 +23,12 @@ overlay2 = os.path.join('Data', 'overlay2.json')
 overlay3 = os.path.join('Data', 'overlay3.json')
 overlay4 = os.path.join('Data', 'overlay4.json')
 
+def style_function(feature):
+    return {
+        'fillColor': '#ffaf00',
+        'color': 'blue',
+        'weight': 1.5
+    }
 # Create a marker
 folium.Marker([51.757241, 19.406272],
               popup='<strong>Main Square</strong>',
@@ -68,12 +74,25 @@ folium.Marker([51.754750, 19.411785],
 # geojson overlay
 folium.GeoJson(overlay, 
     name='Site Design', 
+    style_function=lambda feature: {'fillColor': '#ff3300', 'color': '#ff3300', 'weight': 3},
     tooltip='Main Site'
     ).add_to(m)
-folium.GeoJson(overlay1, name='Site1 Design', tooltip='Small Green Space').add_to(m)
-folium.GeoJson(overlay2, name='Site2 Design', tooltip='Small Green Space').add_to(m)
-folium.GeoJson(overlay3, name='Site3 Design', tooltip='Small Green Space').add_to(m)
-folium.GeoJson(overlay4, name='Site4 the rest Design', tooltip='Small Potential Space').add_to(m)
+folium.GeoJson(overlay1, name='Site1 Design', 
+    style_function=lambda feature: {'fillColor': '#00ff00', 'color': '#00ff00', 'weight': 2}, 
+    tooltip='Small Green Space'
+    ).add_to(m)
+folium.GeoJson(overlay2, name='Site2 Design', 
+    style_function=lambda feature: {'fillColor': '#00ff00', 'color': '#00ff00', 'weight': 2},
+    tooltip='Small Green Space'
+    ).add_to(m)
+folium.GeoJson(overlay3, name='Site3 Design', 
+    style_function=lambda feature: {'fillColor': '#00ff00', 'color': '#00ff00', 'weight': 2},
+    tooltip='Small Green Space'
+    ).add_to(m)
+folium.GeoJson(overlay4, name='Site4 the rest Design', 
+    style_function=lambda feature: {'fillColor': '#ffaf00', 'color': '#b38600', 'weight': 1},
+    tooltip='Small Potential Space'
+    ).add_to(m)
 
 
 # generate circle marker for areas
