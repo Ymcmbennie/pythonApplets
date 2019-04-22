@@ -4,7 +4,7 @@ import json
 
 # create a map
 
-m = folium.Map(location=[51.764980, 19.451964], zoom_start=17)
+m = folium.Map(location=[51.776639, 19.454855], zoom_start=13)
 
 # Global tooltip
 tooltip = 'Click for more info'
@@ -17,10 +17,12 @@ vis = os.path.join('Data', 'vis.json')
 
 # Geojson data  import for plotting
 overlay0 = os.path.join('Data', 'overlay0.json')
+'''
 overlay1 = os.path.join('Data', 'overlay1.json')
 overlay2 = os.path.join('Data', 'overlay2.json')
 overlay3 = os.path.join('Data', 'overlay3.json')
 overlay4 = os.path.join('Data', 'overlay4.json')
+'''
 
 def style_function(feature):
     return {
@@ -103,6 +105,7 @@ folium.GeoJson(overlay0,
     style_function=lambda feature: {'fillColor': '#ff3300', 'color': '#ff3300', 'weight': 3},
     tooltip='Main Site'
     ).add_to(m)
+'''
 folium.GeoJson(overlay1, name='Site1 Design', 
     style_function=lambda feature: {'fillColor': '#00ff00', 'color': '#00ff00', 'weight': 2}, 
     tooltip='Small Green Space'
@@ -130,5 +133,6 @@ folium.CircleMarker(
     fill=True,
     fill_color='#bc0d0d'
 ).add_to(m),
+'''
 # Generate Map
 m.save('map.html')
